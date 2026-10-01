@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Facebook Marketplace - Prueba de Bloqueo</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #18191a;
+      color: #e4e6eb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 20px;
+      background: #242526;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #3a3b3c;
+    }
+    .left-col {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+    }
+    .right-col {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+    }
+    .item-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .item-price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #e4e6eb;
+      margin-top: 4px;
+    }
+    .btn-msg {
+      background: #2e89ff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .desc-box, .map-box, .seller-box {
+      background: #18191a;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    /* Estilos del bloque de publicidad que queremos eliminar */
+    .ad-section-simulated {
+      background: #1e1e1e;
+      border: 2px dashed #e41e3f;
+      padding: 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .ad-header {
+      font-size: 15px;
+      font-weight: 700;
+      color: #b0b3b8;
+      margin-bottom: 10px;
+    }
+    .ad-cards {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .ad-card {
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 8px;
+      min-width: 90px;
+      font-size: 12px;
+      text-align: center;
+    }
+    .ad-card img {
+      width: 100%;
+      height: 60px;
+      background: #444;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-bottom: 6px;
+    }
+    .test-controls {
+      max-width: 1000px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .test-btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      background: #31a24c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="test-controls">
+    <h2>Entorno de Prueba de FB Marketplace AdBlocker</h2>
+    <button class="test-btn" id="runBlockerBtn">⚡ Ejecutar Bloqueador de Anuncios</button>
+    <button class="test-btn" style="background:#e41e3f;" id="resetBtn">Restaurar Anuncios</button>
+  </div>
+
+  <div class="container">
+    <div class="left-col">
+      <div style="text-align: center; color: #888;">
+        <h3>[Foto del producto: 1987 Suzuki FZ 50]</h3>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <div>
+        <div class="item-title">1987 Suzuki FZ 50 87</div>
+        <div class="item-price">$ 2,500</div>
+        <div style="color: #b0b3b8; font-size: 12px; margin-top: 4px;">Publicado hace una semana en Apartadó, Antioquia</div>
+      </div>
+
+      <button class="btn-msg">Enviar mensaje</button>
+
+      <div class="desc-box">
+        <div class="section-title">Descripción del vendedor</div>
+        <p style="font-size: 13px; color: #b0b3b8;">FZ 50 muy buena, placa y matrícula, activa en el Runt.</p>
+      </div>
+
+      <div class="map-box">
+        <div style="font-size: 14px; font-weight: 600;">Apartadó</div>
+        <div style="font-size: 12px; color: #b0b3b8;">Apartadó, Antioquia · La ubicación es aproximada</div>
+      </div>
+
+      <!-- ESTE ES EL BLOQUE DE PUBLICIDAD QUE SE OCULTA -->
+      <div class="ad-section-simulated">
+        <div class="ad-header"><span>Publicidad</span></div>
+        <div class="ad-cards">
+          <div class="ad-card">
+            <div style="height:60px; background:#4f46e5; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff;">ElevenLabs</div>
+            <p style="margin-top:4px;">ElevenLabs</p>
+          </div>
+          <div class="ad-card">
+            <div style="height:60px; background:#10b981; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff;">Platzi</div>
+            <p style="margin-top:4px;">Platzi</p>
+          </div>
+          <div class="ad-card">
+            <div style="height:60px; background:#ec4899; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff;">Bold</div>
+            <p style="margin-top:4px;">Bold</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMACIÓN DEL VENDEDOR (DEBE PERMANECER INTACTA) -->
+      <div class="seller-box">
+        <div class="section-title">Información del vendedor</div>
+        <div style="font-size: 13px; color: #b0b3b8;">Rigo Martinez Avila</div>
+        <div style="font-size: 12px; color: #888;">Se unió a Facebook en 2014</div>
+      </div>
+
+      <div style="background: #18191a; padding: 12px; border-radius: 8px;">
+        <input type="text" value="Hola. ¿Sigue disponible?" style="width: 80%; padding: 8px; border-radius: 6px; border: 1px solid #444; background: #242526; color: white;">
+        <button style="padding: 8px 12px; background: #2e89ff; border: none; color: white; border-radius: 6px;">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script>
+    document.getElementById('runBlockerBtn').addEventListener('click', () => {
+      // Forzar escaneo manual para la prueba
+      const adHeaders = document.querySelectorAll('span, div');
+      for (const el of adHeaders) {
+        if (el.textContent && el.textContent.trim().toLowerCase() === 'publicidad') {
+          // Usar la función de content.js
+          const container = el.closest('.ad-section-simulated');
+          if (container) {
+            container.style.display = 'none';
+            alert('¡Éxito! El bloque de publicidad fue eliminado y la Información del Vendedor subió a su posición.');
+          }
+        }
+      }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.querySelectorAll('.ad-section-simulated').forEach(el => el.style.display = 'block');
+    });
+  </script>
+</body>
+</html>

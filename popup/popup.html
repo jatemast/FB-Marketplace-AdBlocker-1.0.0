@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FB Marketplace AdBlocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <img src="../icons/icon48.png" alt="Logo" class="logo-icon">
+        <div>
+          <h1 class="title">Marketplace AdBlocker</h1>
+          <span class="subtitle">Brave & Chrome Extension</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Switch Card -->
+    <div class="card status-card">
+      <div class="status-info">
+        <span class="status-indicator" id="statusDot"></span>
+        <div>
+          <div class="status-title" id="statusText">Protección Activa</div>
+          <div class="status-desc" id="statusSubtext">Bloqueando publicidad en Marketplace</div>
+        </div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggleBlocker" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Stats Card -->
+    <div class="card stats-card">
+      <div class="stat-item">
+        <div class="stat-number" id="blockedCountDisplay">0</div>
+        <div class="stat-label">Anuncios Bloqueados</div>
+      </div>
+      <button class="btn-reset" id="btnResetCount" title="Reiniciar contador">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        Reiniciar
+      </button>
+    </div>
+
+    <!-- Features list -->
+    <div class="card info-card">
+      <div class="info-title">Características activas:</div>
+      <ul class="features-list">
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Oculta el carrusel de anuncios en el detalle del producto</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Elimina productos patrocinados en la cuadrícula de búsqueda</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>Protege datos del vendedor y descripción original</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>100% Privado · No recopila datos</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
